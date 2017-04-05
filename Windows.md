@@ -16,3 +16,19 @@ We propose the following process:
 * Check for suspicious network communication
 
 ## Check Startup programs
+
+Most malicious software are persistent, which mean that they find a way to be launched on startup. As this change in configuration is not so common, it is a good way to look for suspicious programs. Here are the main way used by malware for persistence :
+* Through the Windows Registry: the Windows Registry includes several keys allowing to start a program on startup. Among these, the following three keys are the most commonly used :
+  * Run/RunOnce Keys : HKLM and HKCU in Software\Microsoft\Windows\CurrentVersion\Run and Software\Microsoft\Windows\CurrentVersion\RunOnce
+  * WinLogon : HiKLM SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon
+* By installing Windows services which allows to be started during startup
+* Scheduled tasks can also be used to start a program at a given time (including during startup)
+
+The tool [Autoruns by sysinternals](https://technet.microsoft.com/en-ca/sysinternals/bb963902.aspx) allows to list all programs launched during startup. Each tab of the program list programs for a different source:
+
+![Autoruns](img/autoruns.png)
+
+We recommend to check for suspicious entries first in the tabs Logon (registry keys Run and Run Once especially), WinLogon, Scheduled Tasks and Services. The following information should be checked:
+* The name of the entry : look for abnormal names (random name for instance), names with typos (crhome)...
+* The description: most legitimate programs have a description
+* The path: any program installed in *C:\Users\* is suspicious (often in *C:\Users\USERNAME\AppData*), *C:\Temp* is clearly abnormal, most of the programs should be in *C:\Program Files* or *C:\Program Files (x86)*
