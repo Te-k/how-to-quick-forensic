@@ -31,4 +31,4 @@ The tool [Autoruns by sysinternals](https://technet.microsoft.com/en-ca/sysinter
 We recommend to check for suspicious entries first in the tabs Logon (registry keys Run and Run Once especially), WinLogon, Scheduled Tasks and Services. The following information should be checked:
 * The name of the entry : look for abnormal names (random name for instance), names with typos (crhome)...
 * The description: most legitimate programs have a description
-* The path: any program installed in *C:\Users\* is suspicious (often in *C:\Users\USERNAME\AppData*), *C:\Temp* is clearly abnormal, most of the programs should be in *C:\Program Files* or *C:\Program Files (x86)*
+* The path: any program installed in *C:\Users* is suspicious (often in *C:\Users\USERNAME\AppData*), *C:\Temp* is clearly abnormal, most of the programs should be in *C:\Program Files* or *C:\Program Files (x86)*
