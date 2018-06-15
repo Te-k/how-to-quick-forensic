@@ -78,6 +78,29 @@ Use [TCP View](https://technet.microsoft.com/en-us/sysinternals/tcpview.aspx) fr
 
 Check for any connection to the suspicious domain or IP address, as well as any abnormal communication (for instance from Word or Adobe Reader for instance).
 
+## Optional : Save data for later investigation
+
+You may not find what you are looking for during the live investigation, or you may be interested to gather information about the system for someone else in order to investigate later. Claudio Guarnieri has developed an interesting tool to do that, called [Snoopdigg](https://github.com/botherder/snoopdigg).
+
+You should run this program from an USB key (be careful to have enough space), and it will gather the following information :
+* Profile of the computer : information about the operating system
+* List of processes
+* Information on programs running on startup, and copy of these programs
+* Optionnally a dump of the memory. You have to be careful with this last item because memory dump contains a lot of private information about what is running on the system. I would advise not to dump the memory except if you really want to use it for investigation.
+
+To launch the tool, plug in the USB key, go to the folder and double-click on the executable file. It will ask you for administrator rights that you need to accept. Then it will ask you to confirm if you want to dump the memory :
+
+![Snoopdigg](img/snoopdigg1.png)
+
+![Snoopdigg](img/snoopdigg2.png)
+
+Once finished, it will create a folder named `acquisitions`, with a subfolder based on computer name and date, which contains :
+* A `profile.json` file containing basic information on the computer system.
+* A `processlist.json` file containing a list of running processes.
+* An `autoruns.json` file containing a list of all items with persistence on the system.
+* An `autoruns/` folder containing copies of the files and executables marked for persistence in the previous JSON file.
+* If requested, a `memory/` folder will contain a physical memory dump as well as some metadata.
+
 ## Optional: Check Prefetch Files
 
 Windows has a feature called prefetch files which create a .pf file in C:\Windows\Prefetch at each execution of a new program. This allows to have information on all the program recently executed on the system. Note that with some Windows version, the prefetch are disabled (check if there are some .pf files in C:\Windows\Prefetch)
