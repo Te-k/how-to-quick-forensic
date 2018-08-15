@@ -5,3 +5,4 @@ This repository includes guides intended to help you to look for malicious softw
 For now the following guides have been developed:
 * [Windows](Windows.md)
 * [Google](Google.md)
+* [Look for hint of Stalkerware on Android](Stalkerware_Android.md)
