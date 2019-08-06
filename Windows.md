@@ -78,6 +78,23 @@ Use [TCP View](https://technet.microsoft.com/en-us/sysinternals/tcpview.aspx) fr
 
 Check for any connection to the suspicious domain or IP address, as well as any abnormal communication (for instance from Word or Adobe Reader for instance).
 
+## 4 - Double check with CrowdInspect
+
+[CrowdInspect](https://www.crowdstrike.com/resources/crowdinspect/) is a tool developed by CrowdStrike that combine an analysis of running processes along with network communications. It checks for known malicious binaries from [TeamCymru](https://www.team-cymru.com/) hash list, suspicious binaries using the [HybridAnalysis](https://www.hybrid-analysis.com/) sandbox and suspicious network communication using the [MyWOT](https://www.mywot.com/) database. As it combines network and process analysis with tools different than VirusTotal, it is a perfect tool to double check that nothing was missed in previous steps.
+
+Launch the binary as Administrator, and accept the default settings :
+
+![CrowdInspect](img/crowdinspect1.png)
+
+Wait for some time until a button "Close" appears on the ad window, and then you get access to the CrowdInspect main window :
+
+![CrowdInspect](img/crowdinspect2.png)
+
+Look for both suspicious communications, or processes identified as suspicious by HybridAnalysis. You can click on a process at any time and check the details of the HybridAnalysis analysis.
+
+![CrowdInspect](img/crowdinspect3.png)
+
+
 ## Optional : Save data for later investigation
 
 You may not find what you are looking for during the live investigation, or you may be interested to gather information about the system for someone else in order to investigate later. Claudio Guarnieri has developed an interesting tool to do that, called [Snoopdigg](https://github.com/botherder/snoopdigg).
