@@ -1,6 +1,6 @@
 # How To Live Forensic
 
-**This repository is not maintained anymore, you can find an updated improved version of this guide on the [Security Without Borders website](https://guides.securitywithoutborders.org/).
+**This repository is not maintained anymore, you can find an updated improved version of this guide on the [Security Without Borders website](https://guides.securitywithoutborders.org/).**
 
 This repository includes guides intended to help looking for malicious software on your system, or malicious activity in your accounts.
 
